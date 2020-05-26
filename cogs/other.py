@@ -2,6 +2,7 @@ import discord
 import datetime
 import json
 import urllib.request
+import aiohttp
 from discord.ext import commands
 from urllib.parse import quote
 from urllib.request import urlopen, Request, HTTPError
@@ -17,6 +18,7 @@ class 기타(commands.Cog):
 
     def __init__(self, client):
         self.client = client
+        self.CBSList = "http://m.safekorea.go.kr/idsiSFK/neo/ext/json/disasterDataList/disasterDataList.json"
 
     @commands.command(name="한영번역", pass_context=True)
     async def translation(self, ctx, *, trsText):
@@ -114,8 +116,33 @@ class 기타(commands.Cog):
         await ctx.send("https://discord.com/api/oauth2/authorize?client_id=710493084902752317&permissions=8&scope=bot")
     
     @commands.command(name="피드백", pass_context=True)
-    async def invite(self, ctx):
+    async def fidbak(self, ctx):
         await ctx.send("https://forms.gle/x3X8j3hKN9oARKPX8")
+
+    @commands.command(name="온라인")
+    async def servernumber(self, ctx):
+        """햔재 들어가있는 서버수를 보여줍니다"""
+        embed = discord.Embed(color=colour)
+        embed.add_field(name="들어가있는 서버수", value=f"{len(client.guilds)}개")
+        await ctx.send(embed=embed)
+    
+    @commands.command(name="재난문자")
+    async def get_cbs(self, ctx):
+        """최근에 발생한 재난문자를 보여줍니다"""
+        async with aiohttp.ClientSession() as session:
+            async with session.get(self.CBSList) as r:
+                data = await r.json()
+
+        embed = discord.Embed(
+            title="📢 재난문자",
+            description="최근 발송된 3개의 재난문자를 보여줘요.",
+            color=0xE71212
+        )
+
+        for i in data[:3]:
+            embed.add_field(name=i["SJ"], value=i["CONT"], inline=False)
+        await ctx.send(embed=embed)
+    
 
 
 
