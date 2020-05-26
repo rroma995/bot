@@ -1,10 +1,6 @@
 import discord
-from configparser import ConfigParser
 from discord.ext import commands
 
-config = ConfigParser()
-config.read('././config.ini')
-prefix = config["setting"]["prefix"]
 
 colour = discord.Colour.blue()
 
@@ -20,7 +16,7 @@ class 도움말(commands.Cog):
             embed = discord.Embed(description='도움말', color=colour)
             cog_desc = ''
             for x in self.client.cogs:
-                cog_desc += f'**{prefix}도움 {x}** - {self.client.cogs[x].__doc__}\n'
+                cog_desc += f'**!도움 {x}** - {self.client.cogs[x].__doc__}\n'
             embed.add_field(name='카테고리', value=cog_desc[0:len(cog_desc)-1], inline=False)
             await ctx.message.add_reaction(emoji='✉')
             await ctx.send(embed=embed)
@@ -37,7 +33,7 @@ class 도움말(commands.Cog):
                             scog_info = ''
                             for c in self.client.get_cog(y).get_commands():
                                 if not c.hidden:
-                                    scog_info += f'**{prefix}{c.name}** - {c.help}\n'
+                                    scog_info += f'**!{c.name}** - {c.help}\n'
                             embed.add_field(name=f'{cog[0]}모델 - {self.client.cogs[cog[0]].__doc__}', value=scog_info)
                             found = True
                 if not found:
@@ -45,7 +41,7 @@ class 도움말(commands.Cog):
                         for c in self.client.get_cog(x).get_commands():
                             if c.name == cog[0]:
                                 embed = discord.Embed(color=colour)
-                                embed.add_field(name=f'{c.name} - {c.help}', value=f'올바른 구문:\n{prefix}{c.qualified_name} {c.signature}')
+                                embed.add_field(name=f'{c.name} - {c.help}', value=f'올바른 구문:\n!{c.qualified_name} {c.signature}')
                                 found = True
                     if not found:
                         embed = discord.Embed(title='에러', description='없는 카테고리입니다.', color=colour)
