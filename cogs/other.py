@@ -121,7 +121,7 @@ class 기타(commands.Cog):
 
     @commands.command(name="온라인")
     async def servernumber(self, ctx):
-        """햔재 들어가있는 서버수를 보여줍니다"""
+        """현재 들어가있는 서버수를 보여줍니다"""
         embed = discord.Embed(color=colour)
         embed.add_field(name="들어가있는 서버수", value=f"{len(client.guilds)}개")
         await ctx.send(embed=embed)
