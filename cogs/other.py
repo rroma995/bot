@@ -115,9 +115,9 @@ class 기타(commands.Cog):
         """봇초대 주소를 보여줍니다"""
         await ctx.send("https://discord.com/api/oauth2/authorize?client_id=721962122749280336&permissions=8&scope=bot")
     
-    @commands.command(name="피드백", pass_context=True)
+    @commands.command(name="사이트", pass_context=True)
     async def fidbak(self, ctx):
-        await ctx.send("https://forms.gle/8rujAS6WBbv4eTra6")
+        await ctx.send("https://pocobot.netlify.app/")
 
     @commands.command(name="온라인")
     async def servernumber(self, ctx):
