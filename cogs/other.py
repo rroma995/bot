@@ -119,6 +119,11 @@ class 기타(commands.Cog):
     async def fidbak(self, ctx):
         """포코봇 사이트 주소를 보여줍니다"""
         await ctx.send("https://poco2020bot.netlify.app/")
+        
+    @commands.command(name="포코봇 공식디코", pass_context=True)
+    async def fidbak(self, ctx):
+        """포코봇 공식 디스코드 주소를 보여줍니다"""
+        await ctx.send("포코봇 공식디스코드 방이 준비중 입니다.")
 
     @commands.command(name="온라인")
     async def servernumber(self, ctx):
