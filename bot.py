@@ -27,7 +27,7 @@ async def on_ready():
     print('Discord.py 버전 : ' + discord.__version__)
     print("bot starting..")#봇 시작이라고 뜨게하기
     print("==========")
-    await client.change_presence(activity=discord.Game('봇 | !도움'))
+    await client.change_presence(activity=discord.Game('리안봇 | !도움'))
 
 
 
