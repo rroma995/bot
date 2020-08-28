@@ -115,15 +115,10 @@ class 기타(commands.Cog):
         """봇초대 주소를 보여줍니다"""
         await ctx.send("https://discord.com/api/oauth2/authorize?client_id=744942696627568800&permissions=8&scope=bot")
     
-    @commands.command(name="사이트", pass_context=True)
+    @commands.command(name="", pass_context=True)
     async def fidbak(self, ctx):
-        """포코봇 사이트 주소를 보여줍니다"""
-        await ctx.send("https://poco2020bot.netlify.app/")
-        
-    @commands.command(name="포코봇공식디스코드", pass_context=True)
-    async def fidbak(self, ctx):
-        """포코봇 공식 디스코드 주소를 보여줍니다"""
-        await ctx.send("https://discord.gg/S6b3XnT")
+        """리안봇 사이트 주소를 보여줍니다"""
+        await ctx.send("https://forms.gle/tZe7UCf3QQ2UYuFs5")
 
     @commands.command(name="온라인")
     async def servernumber(self, ctx):
