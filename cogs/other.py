@@ -118,7 +118,7 @@ class 기타(commands.Cog):
     @commands.command(name="", pass_context=True)
     async def fidbak(self, ctx):
         """리안봇 사이트 주소를 보여줍니다"""
-        await ctx.send("https://forms.gle/tZe7UCf3QQ2UYuFs5")
+        await ctx.send("https://forms.gle/KTNDDAu8pKMdswQt7")
 
     @commands.command(name="온라인")
     async def servernumber(self, ctx):
