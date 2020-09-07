@@ -115,10 +115,10 @@ class 기타(commands.Cog):
         """봇초대 주소를 보여줍니다"""
         await ctx.send("https://discord.com/api/oauth2/authorize?client_id=744942696627568800&permissions=8&scope=bot")
     
-    @commands.command(name="", pass_context=True)
+    @commands.command(name="사이트", pass_context=True)
     async def fidbak(self, ctx):
         """리안봇 사이트 주소를 보여줍니다"""
-        await ctx.send("https://forms.gle/KTNDDAu8pKMdswQt7")
+        await ctx.send("https://lianbot.netlify.app/")
 
     @commands.command(name="온라인")
     async def servernumber(self, ctx):
