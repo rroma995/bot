@@ -113,7 +113,7 @@ class 기타(commands.Cog):
     @commands.command(name="봇초대", pass_context=True)
     async def invite(self, ctx):
         """봇초대 주소를 보여줍니다"""
-        await ctx.send("https://discord.com/api/oauth2/authorize?client_id=744942696627568800&permissions=8&scope=bot")
+        await ctx.send("https://discord.com/api/oauth2/authorize?client_id=754694147214016572&permissions=8&scope=bot")
     
     @commands.command(name="사이트", pass_context=True)
     async def fidbak(self, ctx):
