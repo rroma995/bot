@@ -117,8 +117,8 @@ class 기타(commands.Cog):
     
     @commands.command(name="사이트", pass_context=True)
     async def fidbak(self, ctx):
-        """봇 사이트 주소를 보여줍니다"""
-        await ctx.send("https://lianbot.netlify.app/")
+        """아론봇 사이트 주소를 보여줍니다"""
+        await ctx.send("https://aaronbot.netlify.app/")
 
     @commands.command(name="온라인")
     async def servernumber(self, ctx):
